@@ -2,64 +2,72 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Mail, Code2, Heart, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import developersBgImage from "@/assets/developers-bg.jpg";
 
 const DevelopersSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="developers" className="py-32 bg-gradient-to-b from-background to-primary/5">
-      <div className="container mx-auto px-4">
+    <section id="developers" className="py-32 bg-gradient-purple relative overflow-hidden">
+      {/* Background Image with Purple Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-15"
+        style={{ backgroundImage: `url(${developersBgImage})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-purple"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-8 fade-in-up">
-              <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center">
-                <Code2 className="h-10 w-10 text-primary" />
+              <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                <Code2 className="h-10 w-10 text-white" />
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-serif font-normal mb-6 fade-in-up delay-200">
+            <h2 className="text-4xl md:text-5xl font-serif font-normal mb-6 fade-in-up delay-200 text-white">
               {t('developers.title')}
             </h2>
             
-            <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 scale-in delay-300"></div>
+            <div className="w-24 h-1 bg-white/50 mx-auto mb-8 scale-in delay-300"></div>
             
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto fade-in-up delay-400">
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto fade-in-up delay-400">
               {t('developers.description')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center scale-in delay-500">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center backdrop-blur-sm">
+                <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-serif mb-2">Comunidade</h3>
-              <p className="text-muted-foreground">Junte-se a desenvolvedores apaixonados por literatura</p>
+              <h3 className="text-xl font-serif mb-2 text-white">Comunidade</h3>
+              <p className="text-white/80">Junte-se a desenvolvedores apaixonados por literatura</p>
             </div>
             
             <div className="text-center scale-in delay-600">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                <Code2 className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center backdrop-blur-sm">
+                <Code2 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-serif mb-2">Tecnologia</h3>
-              <p className="text-muted-foreground">React, TypeScript, Tailwind e muito mais</p>
+              <h3 className="text-xl font-serif mb-2 text-white">Tecnologia</h3>
+              <p className="text-white/80">React, TypeScript, Tailwind e muito mais</p>
             </div>
             
             <div className="text-center scale-in delay-700">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                <Heart className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center backdrop-blur-sm">
+                <Heart className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-serif mb-2">Propósito</h3>
-              <p className="text-muted-foreground">Impactar positivamente a cultura de leitura no Brasil</p>
+              <h3 className="text-xl font-serif mb-2 text-white">Propósito</h3>
+              <p className="text-white/80">Impactar positivamente a cultura de leitura no Brasil</p>
             </div>
           </div>
 
-          <Card className="shadow-soft bg-gradient-card border-border/50 fade-in-up delay-400">
+          <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl fade-in-up delay-800">
             <CardContent className="p-8">
               <div className="space-y-6">
                 <div className="flex items-center justify-center">
-                  <Heart className="h-6 w-6 text-red-500 mr-2" />
-                  <span className="text-lg font-medium">
+                  <Heart className="h-6 w-6 text-red-400 mr-2" />
+                  <span className="text-lg font-medium text-white">
                     {t('developers.contact')}
                   </span>
                 </div>
@@ -68,20 +76,20 @@ const DevelopersSection = () => {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="flex items-center space-x-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    className="flex items-center space-x-2 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm"
                   >
                     <Mail className="h-4 w-4" />
                     <span>jobs@euclari.com.br</span>
                   </Button>
                   
-                <Button 
-                  variant="literary"
-                  size="lg"
-                  className="bg-primary hover:bg-primary-dark text-primary-foreground shadow-glow hover:shadow-soft transition-all duration-300 group"
-                >
-                  <Github className="h-4 w-4 mr-2" />
-                  {t('developers.cta')}
-                </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="bg-white text-primary hover:bg-white/90 border-white shadow-lg font-medium"
+                  >
+                    <Github className="h-4 w-4 mr-2" />
+                    {t('developers.cta')}
+                  </Button>
                 </div>
               </div>
             </CardContent>
