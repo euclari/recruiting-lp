@@ -9,7 +9,7 @@ const BookClubsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-32 bg-gradient-to-b from-primary/5 via-primary/10 to-background">
+    <section className="py-32 bg-gradient-to-b from-primary/15 via-primary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -31,7 +31,7 @@ const BookClubsSection = () => {
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-500">
+            <div className="bg-primary-light/20 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-500">
               <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-4">
                 <Vote className="w-6 h-6 text-primary" />
               </div>
@@ -39,7 +39,7 @@ const BookClubsSection = () => {
               <p className="text-muted-foreground text-sm">Todos os membros votam no próximo livro</p>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-600">
+            <div className="bg-primary-light/20 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-600">
               <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-4">
                 <BarChart3 className="w-6 h-6 text-primary" />
               </div>
@@ -47,7 +47,7 @@ const BookClubsSection = () => {
               <p className="text-muted-foreground text-sm">Acompanhe o progresso de todo o grupo</p>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-700">
+            <div className="bg-primary-light/20 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-700">
               <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-4">
                 <MessageCircle className="w-6 h-6 text-primary" />
               </div>
@@ -55,12 +55,29 @@ const BookClubsSection = () => {
               <p className="text-muted-foreground text-sm">Chats temporários para cada capítulo</p>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-800">
+            <div className="bg-primary-light/20 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-800">
               <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-serif text-lg mb-2">{t('bookClubs.feature4')}</h3>
               <p className="text-muted-foreground text-sm">Discussões organizadas por temas</p>
+            </div>
+          </div>
+
+          {/* Book Clubs Image */}
+          <div className="flex justify-center mb-16">
+            <div className="relative max-w-md">
+              <div className="modern-image-container">
+                <img 
+                  src="/undraw_group-chat_4xw0.svg" 
+                  alt="Chat em grupo e discussões"
+                  className="modern-image rotate-in"
+                />
+              </div>
+              {/* Modern floating elements */}
+              <div className="floating-element w-14 h-14 -top-6 -left-6"></div>
+              <div className="floating-element w-8 h-8 -bottom-8 -right-8"></div>
+              <div className="floating-element w-6 h-6 top-1/3 -right-12"></div>
             </div>
           </div>
 

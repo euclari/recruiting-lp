@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import BookClubsSection from "@/components/BookClubsSection";
 import DevelopersSection from "@/components/DevelopersSection";
+import JoinTeamSection from "@/components/JoinTeamSection";
 
 const LandingPage = () => {
   return (
@@ -15,6 +16,7 @@ const LandingPage = () => {
         <FeaturesSection />
         <BookClubsSection />
         <DevelopersSection />
+        <JoinTeamSection />
       </main>
       
       {/* Footer */}
