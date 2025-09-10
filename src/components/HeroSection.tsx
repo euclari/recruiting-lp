@@ -36,14 +36,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 fade-in-up">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-normal mb-4 fade-in-up leading-tight">
             <span className="gradient-text">
               {t('hero.title')}
             </span>
           </h1>
           
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto fade-in-up delay-200">
+          <p className="text-xl md:text-2xl text-muted-foreground/80 mb-12 max-w-3xl mx-auto fade-in-up delay-300 leading-relaxed">
             {t('hero.subtitle')}
           </p>
           
