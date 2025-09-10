@@ -44,10 +44,10 @@ All colors MUST be HSL.
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(248 79% 67%), hsl(268 70% 75%));
-    --gradient-hero: linear-gradient(135deg, hsl(248 79% 67% / 0.3), hsl(268 70% 75% / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(248 30% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(248 79% 67% / 0.8), hsl(268 70% 75% / 0.6));
+    --gradient-card: linear-gradient(145deg, hsl(248 20% 98%), hsl(248 30% 95%));
     --gradient-purple: linear-gradient(135deg, hsl(248 79% 67% / 0.9), hsl(268 70% 75% / 0.8));
-    --gradient-section: linear-gradient(135deg, hsl(248 79% 67% / 0.05), hsl(268 70% 75% / 0.02));
+    --gradient-section: linear-gradient(135deg, hsl(248 79% 67% / 0.25), hsl(268 70% 75% / 0.15));
 
     /* Literary Shadows */
     --shadow-soft: 0 4px 20px hsl(248 79% 67% / 0.08);
@@ -108,6 +108,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, hsl(248 20% 98%), hsl(248 30% 96%));
   }
   
   /* Typography Classes */
@@ -187,6 +188,66 @@ All colors MUST be HSL.
   100% { transform: translateX(100%); }
 }
 
+@keyframes floatImage {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.02); 
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
 @layer components {
   /* Literary Animation Classes */
   .float-book {
@@ -219,6 +280,143 @@ All colors MUST be HSL.
   
   .pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  /* Image Animation Classes */
+  .float-image {
+    animation: floatImage 4s ease-in-out infinite;
+  }
+  
+  .slide-in-from-left {
+    animation: slideInFromLeft 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .slide-in-from-right {
+    animation: slideInFromRight 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .bounce-in {
+    animation: bounceIn 1.2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .rotate-in {
+    animation: rotateIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Modern Image Styles */
+  .modern-image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 
+      0 20px 40px rgba(108, 92, 231, 0.1),
+      0 8px 16px rgba(108, 92, 231, 0.05),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .modern-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(108, 92, 231, 0.1) 0%, 
+      rgba(255, 255, 255, 0.05) 50%, 
+      rgba(108, 92, 231, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+  
+  .modern-image-container:hover::before {
+    opacity: 1;
+  }
+  
+  .modern-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 10px 20px rgba(108, 92, 231, 0.15));
+  }
+  
+  .modern-image-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 32px 64px rgba(108, 92, 231, 0.2),
+      0 16px 32px rgba(108, 92, 231, 0.1),
+      inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  
+  .modern-image-container:hover .modern-image {
+    filter: drop-shadow(0 20px 40px rgba(108, 92, 231, 0.25)) brightness(1.05);
+  }
+  
+  /* Floating decorative elements */
+  .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.2), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-element:nth-child(2) {
+    animation-delay: 2s;
+  }
+  
+  .floating-element:nth-child(3) {
+    animation-delay: 4s;
+  }
+  
+  /* Image grid styles */
+  .image-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .image-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .image-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Hero image special styling */
+  .hero-image-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(45deg, 
+      rgba(108, 92, 231, 0.1), 
+      rgba(255, 255, 255, 0.05), 
+      rgba(108, 92, 231, 0.1));
+    border-radius: 40px;
+    z-index: -1;
+    animation: pulseGlow 3s ease-in-out infinite;
   }
   
   /* Gradient Text */
@@ -257,4 +455,9 @@ All colors MUST be HSL.
   .delay-300 { animation-delay: 0.3s; }
   .delay-400 { animation-delay: 0.4s; }
   .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-800 { animation-delay: 0.8s; }
+  .delay-900 { animation-delay: 0.9s; }
+  .delay-1000 { animation-delay: 1s; }
 }

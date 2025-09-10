@@ -12,7 +12,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import featuresBgImage from "@/assets/features-bg.jpg";
+
 
 const FeaturesSection = () => {
   const { t } = useLanguage();
@@ -69,11 +69,8 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-32 bg-gradient-section relative overflow-hidden">
       {/* Background Image with Purple Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: `url(${featuresBgImage})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-primary/10"></div>
+      
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/15 to-primary/25"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
@@ -88,13 +85,61 @@ const FeaturesSection = () => {
           </p>
         </div>
 
+        {/* Feature Images Row */}
+        <div className="image-grid image-grid-3 mb-16">
+          <div className="text-center slide-in-from-left delay-500">
+            <div className="relative inline-block mb-6 max-w-[200px]">
+              <div className="modern-image-container">
+                <img 
+                  src="/undraw_social-media_vxq0.svg" 
+                  alt="Rede social e conexões"
+                  className="modern-image float-image"
+                />
+              </div>
+              <div className="floating-element w-8 h-8 -top-4 -right-4"></div>
+            </div>
+            <h3 className="text-xl font-serif text-primary mb-2">Conexões Sociais</h3>
+            <p className="text-muted-foreground text-sm">Conecte-se com outros leitores</p>
+          </div>
+          
+          <div className="text-center bounce-in delay-700">
+            <div className="relative inline-block mb-6 max-w-[200px]">
+              <div className="modern-image-container">
+                <img 
+                  src="/undraw_friends-online_gvwz.svg" 
+                  alt="Amigos online"
+                  className="modern-image float-image"
+                />
+              </div>
+              <div className="floating-element w-10 h-10 -bottom-4 -left-4"></div>
+            </div>
+            <h3 className="text-xl font-serif text-primary mb-2">Amigos Online</h3>
+            <p className="text-muted-foreground text-sm">Faça novos amigos leitores</p>
+          </div>
+          
+          <div className="text-center slide-in-from-right delay-900">
+            <div className="relative inline-block mb-6 max-w-[200px]">
+              <div className="modern-image-container">
+                <img 
+                  src="/undraw_solution-mindset_pit7.svg" 
+                  alt="Solução e mindset"
+                  className="modern-image float-image"
+                />
+              </div>
+              <div className="floating-element w-6 h-6 top-1/2 -right-6"></div>
+            </div>
+            <h3 className="text-xl font-serif text-primary mb-2">Mindset Inovador</h3>
+            <p className="text-muted-foreground text-sm">Pensamento criativo e inovador</p>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`group scale-in delay-${(index + 1) * 100}`}
+              className={`group scale-in delay-${(index + 1) * 100 + 1000}`}
             >
-              <Card className="h-full shadow-soft hover:shadow-glow transition-all duration-500 border-border/50 bg-white/95 backdrop-blur-sm hover:scale-105 transform hover:bg-primary/5">
+              <Card className="h-full shadow-soft hover:shadow-glow transition-all duration-500 border-border/50 bg-primary-light/20 backdrop-blur-sm hover:scale-105 transform hover:bg-primary/5">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-primary/15 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/25 transition-all duration-300 group-hover:scale-110">
                     <feature.icon className="h-8 w-8 text-primary" />

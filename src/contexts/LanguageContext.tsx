@@ -57,9 +57,35 @@ const translations = {
     
     // Developers
     'developers.title': 'Convite para Desenvolvedores',
-    'developers.description': 'Clarice ainda é um projeto acadêmico. Quer participar da construção? Junte-se a nós!',
+    'developers.description': 'Clarice ainda é um projeto acadêmico. Estamos à procura de pessoas que possam agregar na equipe, como UI/UX Designers, Product Managers e outros talentos. Junte-se a nós!',
     'developers.contact': 'Entre em contato:',
     'developers.cta': 'Contribuir no GitHub',
+    
+    // Join Team Section
+    'joinTeam.title': 'Junte-se à Nossa Equipe',
+    'joinTeam.subtitle': 'Estamos em busca de pessoas talentosas que possam agregar valor ao nosso projeto. Se você tem paixão por literatura e tecnologia, venha fazer parte dessa jornada!',
+    'joinTeam.lookingFor': 'Procuramos por:',
+    'joinTeam.uiux.title': 'UI/UX Designer',
+    'joinTeam.uiux.desc': 'Alguém que entenda de experiência do usuário e possa criar interfaces intuitivas e belas para nossa plataforma de leitura social.',
+    'joinTeam.product.title': 'Product Manager',
+    'joinTeam.product.desc': 'Profissional com visão estratégica para ajudar a definir o roadmap do produto e garantir que estamos criando valor real para nossos usuários.',
+    'joinTeam.developer.title': 'Desenvolvedores',
+    'joinTeam.developer.desc': 'Desenvolvedores frontend e backend que queiram contribuir para uma plataforma que conecta pessoas através da literatura.',
+    'joinTeam.other.title': 'Outras Áreas',
+    'joinTeam.other.desc': 'Se você tem outras habilidades que podem agregar ao projeto, não hesite em entrar em contato! Estamos abertos a novas ideias.',
+    'joinTeam.interested': 'Interessado em fazer parte?',
+    'joinTeam.form.name': 'Nome',
+    'joinTeam.form.email': 'Email',
+    'joinTeam.form.role': 'Área de Interesse',
+    'joinTeam.form.message': 'Mensagem',
+    'joinTeam.form.namePlaceholder': 'Seu nome completo',
+    'joinTeam.form.emailPlaceholder': 'seu@email.com',
+    'joinTeam.form.rolePlaceholder': 'UI/UX, Product, Desenvolvimento, etc.',
+    'joinTeam.form.messagePlaceholder': 'Conte-nos um pouco sobre você, sua experiência e por que gostaria de fazer parte do projeto...',
+    'joinTeam.form.submit': 'Enviar Candidatura',
+    'joinTeam.form.sending': 'Enviando...',
+    'joinTeam.form.success': 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
+    'joinTeam.form.error': 'Erro ao enviar mensagem. Tente novamente mais tarde.',
   },
   en: {
     // Header
@@ -109,9 +135,35 @@ const translations = {
     
     // Developers
     'developers.title': 'Invitation for Developers',
-    'developers.description': 'Clarice is still an academic project. Want to join the building? Be part of it!',
+    'developers.description': 'Clarice is still an academic project. We are looking for people who can add to the team, such as UI/UX Designers, Product Managers, and other talents. Join us!',
     'developers.contact': 'Get in touch:',
     'developers.cta': 'Contribute on GitHub',
+    
+    // Join Team Section
+    'joinTeam.title': 'Join Our Team',
+    'joinTeam.subtitle': 'We are looking for talented people who can add value to our project. If you have a passion for literature and technology, come be part of this journey!',
+    'joinTeam.lookingFor': 'We are looking for:',
+    'joinTeam.uiux.title': 'UI/UX Designer',
+    'joinTeam.uiux.desc': 'Someone who understands user experience and can create intuitive and beautiful interfaces for our social reading platform.',
+    'joinTeam.product.title': 'Product Manager',
+    'joinTeam.product.desc': 'Professional with strategic vision to help define the product roadmap and ensure we are creating real value for our users.',
+    'joinTeam.developer.title': 'Developers',
+    'joinTeam.developer.desc': 'Frontend and backend developers who want to contribute to a platform that connects people through literature.',
+    'joinTeam.other.title': 'Other Areas',
+    'joinTeam.other.desc': 'If you have other skills that can add to the project, don\'t hesitate to get in touch! We are open to new ideas.',
+    'joinTeam.interested': 'Interested in joining?',
+    'joinTeam.form.name': 'Name',
+    'joinTeam.form.email': 'Email',
+    'joinTeam.form.role': 'Area of Interest',
+    'joinTeam.form.message': 'Message',
+    'joinTeam.form.namePlaceholder': 'Your full name',
+    'joinTeam.form.emailPlaceholder': 'your@email.com',
+    'joinTeam.form.rolePlaceholder': 'UI/UX, Product, Development, etc.',
+    'joinTeam.form.messagePlaceholder': 'Tell us a bit about yourself, your experience and why you would like to be part of the project...',
+    'joinTeam.form.submit': 'Submit Application',
+    'joinTeam.form.sending': 'Sending...',
+    'joinTeam.form.success': 'Message sent successfully! We will get in touch soon.',
+    'joinTeam.form.error': 'Error sending message. Please try again later.',
   },
 };
 
