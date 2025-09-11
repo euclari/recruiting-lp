@@ -31,7 +31,7 @@ const HeroSection = () => {
             </h1>
             
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-muted-foreground/80 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground/90 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed">
               {t('hero.subtitle')}
             </p>
             
@@ -64,7 +64,7 @@ const HeroSection = () => {
                 <img 
                   src="/undraw_reading-time_gcvc.svg" 
                   alt="Pessoa lendo com elementos flutuantes de livros"
-                  className="modern-image float-image"
+                  className="animated-hero-image"
                 />
               </div>
               {/* Modern floating elements */}
