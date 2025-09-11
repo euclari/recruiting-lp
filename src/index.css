@@ -43,11 +43,12 @@ All colors MUST be HSL.
     --ring: 248 79% 67%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(248 79% 67%), hsl(268 70% 75%));
+    --gradient-primary: linear-gradient(135deg, hsl(248 79% 57%), hsl(268 70% 65%));
     --gradient-hero: linear-gradient(135deg, hsl(248 79% 67% / 0.8), hsl(268 70% 75% / 0.6));
     --gradient-card: linear-gradient(145deg, hsl(248 20% 98%), hsl(248 30% 95%));
     --gradient-purple: linear-gradient(135deg, hsl(248 79% 67% / 0.9), hsl(268 70% 75% / 0.8));
     --gradient-section: linear-gradient(135deg, hsl(248 79% 67% / 0.25), hsl(268 70% 75% / 0.15));
+    --gradient-text-hero: linear-gradient(135deg, hsl(248, 100%, 95%), hsl(0, 0%, 100%));
 
     /* Literary Shadows */
     --shadow-soft: 0 4px 20px hsl(248 79% 67% / 0.08);
@@ -313,6 +314,7 @@ All colors MUST be HSL.
     display: inline-block;
     border-radius: 24px;
     overflow: hidden;
+    padding: 0.5rem;
     background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
@@ -361,6 +363,14 @@ All colors MUST be HSL.
   
   .modern-image-container:hover .modern-image {
     filter: drop-shadow(0 20px 40px rgba(108, 92, 231, 0.25)) brightness(1.05);
+  }
+  
+  .animated-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(108, 92, 231, 0.15));
+    animation: floatImage 4s ease-in-out infinite;
   }
   
   /* Floating decorative elements */

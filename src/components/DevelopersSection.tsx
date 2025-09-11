@@ -79,8 +79,8 @@ const DevelopersSection = () => {
             <CardContent className="p-8">
               <div className="space-y-6">
                 <div className="flex items-center justify-center">
-                  <Heart className="h-6 w-6 text-red-400 mr-2" />
-                  <span className="text-lg font-medium text-white">
+                  <Heart className="h-6 w-6 text-white mr-2" />
+                  <span className="text-lg font-medium text-black">
                     {t('developers.contact')}
                   </span>
                 </div>
@@ -89,7 +89,7 @@ const DevelopersSection = () => {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="flex items-center space-x-2 border-white/30 text-black hover:bg-white/20 hover:text-black backdrop-blur-sm"
+                    className="bg-primary text-white border-primary shadow-lg font-medium transition-colors hover:bg-primary/90"
                     asChild
                   >
                     <a href="mailto:jobs@euclari.com.br">
