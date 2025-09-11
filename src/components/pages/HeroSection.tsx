@@ -21,12 +21,12 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-normal mb-4 fade-in-up leading-tight">
-              <span className="gradient-text">
+              <span className="gradient-text-hero">
                 {t('hero.title')}
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground/90 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground/70 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed">
               {t('hero.subtitle')}
             </p>
             

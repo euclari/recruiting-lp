@@ -437,6 +437,14 @@ All colors MUST be HSL.
     background-clip: text;
   }
   
+  /* Brighter gradient specifically for the hero title to increase legibility */
+  .gradient-text-hero {
+    background: var(--gradient-text-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
   /* Glass Effect */
   .glass-card {
     background: rgba(255, 255, 255, 0.7);
