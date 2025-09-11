@@ -22,10 +22,6 @@ const Footer: React.FC = () => {
               <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Recursos</a>
               <a href="#book-clubs" className="text-muted-foreground hover:text-primary transition-colors">Clubes do Livro</a>
               <a href="#developers" className="text-muted-foreground hover:text-primary transition-colors">Para Desenvolvedores</a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contato</a>
-              <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</a>
-              <a href="#terms" className="text-muted-foreground hover:text-primary transition-colors">Termos de Serviço</a>
-              <a href="#privacy" className="text-muted-foreground hover:text-primary transition-colors">Política de Privacidade</a>
             </div>
           </div>
 
