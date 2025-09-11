@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,7 +31,7 @@ All colors MUST be HSL.
     --secondary-foreground: 248 50% 30%;
 
     --muted: 248 20% 96%;
-    --muted-foreground: 240 10% 55%;
+    --muted-foreground: 240 10% 35%;
 
     --accent: 248 60% 95%;
     --accent-foreground: 248 50% 30%;
@@ -43,7 +45,7 @@ All colors MUST be HSL.
     --ring: 248 79% 67%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(248 79% 57%), hsl(268 70% 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(248 79% 47%), hsl(268 70% 55%));
     --gradient-hero: linear-gradient(135deg, hsl(248 79% 67% / 0.8), hsl(268 70% 75% / 0.6));
     --gradient-card: linear-gradient(145deg, hsl(248 20% 98%), hsl(248 30% 95%));
     --gradient-purple: linear-gradient(135deg, hsl(248 79% 67% / 0.9), hsl(268 70% 75% / 0.8));
@@ -108,18 +110,20 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
     background: linear-gradient(135deg, hsl(248 20% 98%), hsl(248 30% 96%));
   }
   
-  /* Typography Classes */
-  .font-serif {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
+  /* Ensure images and embedded content are responsive */
+  img, video, canvas, svg, picture, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
-  
+
+  /* Typography Classes */
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 400;
   }
 }
@@ -361,10 +365,6 @@ All colors MUST be HSL.
       inset 0 1px 0 rgba(255,255,255,0.2);
   }
   
-  .modern-image-container:hover .modern-image {
-    filter: drop-shadow(0 20px 40px rgba(108, 92, 231, 0.25)) brightness(1.05);
-  }
-  
   .animated-hero-image {
     width: 100%;
     height: auto;
@@ -409,7 +409,7 @@ All colors MUST be HSL.
   /* Hero image special styling */
   .hero-image-container {
     position: relative;
-    max-width: 500px;
+    max-width: 700px;
     margin: 0 auto;
   }
   
@@ -470,4 +470,8 @@ All colors MUST be HSL.
   .delay-800 { animation-delay: 0.8s; }
   .delay-900 { animation-delay: 0.9s; }
   .delay-1000 { animation-delay: 1s; }
+}
+
+html {
+  scroll-behavior: smooth;
 }

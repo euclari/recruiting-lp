@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Mail, Code2, Heart, Users } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/components/contexts/LanguageContext";
 
 
 const DevelopersSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="developers" className="py-32 bg-gradient-purple relative overflow-hidden">
+    <section id="developers" className="py-20 md:py-28 lg:py-32 bg-gradient-purple relative overflow-hidden">
       {/* Background Image with Purple Overlay */}
       
       <div className="absolute inset-0 bg-gradient-purple"></div>

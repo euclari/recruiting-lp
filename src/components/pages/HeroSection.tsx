@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Users, Sparkles } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/components/contexts/LanguageContext";
 const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-hero" />
 

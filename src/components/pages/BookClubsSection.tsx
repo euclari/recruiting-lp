@@ -2,14 +2,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Users, Vote, BarChart3, MessageCircle, ArrowRight, CheckCircle } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/components/contexts/LanguageContext";
 import bookClubsImage from "@/assets/book-clubs.jpg";
 
 const BookClubsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-32 bg-gradient-to-b from-primary/15 via-primary/20 to-background">
+    <section id="book-clubs" className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-primary/15 via-primary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}

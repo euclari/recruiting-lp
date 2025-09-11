@@ -13,8 +13,8 @@ import {
   Code2,
   Target
 } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { sendContactEmail, ContactFormData } from "@/services/emailService";
+import { useLanguage } from "@/components/contexts/LanguageContext";
+import { sendContactEmail, ContactFormData } from "@/components/services/emailService";
 import { useState } from "react";
 
 const JoinTeamSection = () => {
@@ -56,7 +56,7 @@ const JoinTeamSection = () => {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
+    <section id="join-team" className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
       {/* Decorative purple elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
       <div className="absolute top-40 right-20 w-24 h-24 bg-primary/15 rounded-full blur-lg"></div>
@@ -77,7 +77,7 @@ const JoinTeamSection = () => {
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-serif font-normal mb-6 fade-in-up delay-200">
+            <h2 className="text-4xl md:text-5xl font-normal mb-6 fade-in-up delay-200">
               {t('joinTeam.title')}
             </h2>
             

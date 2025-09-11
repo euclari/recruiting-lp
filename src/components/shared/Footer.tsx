@@ -1,0 +1,79 @@
+import React from 'react';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-card text-card-foreground border-t border-border py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Brand Info */}
+          <div className="col-span-1">
+            <h3 className="text-2xl font-bold text-primary mb-2">Clarice</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Conectando leitores e escritores em uma comunidade vibrante e inspiradora.
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="col-span-1">
+            <h4 className="text-lg font-semibold mb-4">Navegação</h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">Sobre Nós</a>
+              <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Recursos</a>
+              <a href="#book-clubs" className="text-muted-foreground hover:text-primary transition-colors">Clubes do Livro</a>
+              <a href="#developers" className="text-muted-foreground hover:text-primary transition-colors">Para Desenvolvedores</a>
+              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contato</a>
+              <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</a>
+              <a href="#terms" className="text-muted-foreground hover:text-primary transition-colors">Termos de Serviço</a>
+              <a href="#privacy" className="text-muted-foreground hover:text-primary transition-colors">Política de Privacidade</a>
+            </div>
+          </div>
+
+          {/* Social Media & Newsletter */}
+          <div className="col-span-1">
+            <h4 className="text-lg font-semibold mb-4">Conecte-se</h4>
+            <div className="flex space-x-4 mb-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <FaFacebook size={24} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <FaTwitter size={24} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <FaInstagram size={24} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <FaLinkedin size={24} />
+              </a>
+            </div>
+            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
+            <p className="text-muted-foreground text-sm mb-2">Receba as últimas novidades e atualizações.</p>
+            <form className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                placeholder="Seu e-mail"
+                className="flex-grow px-4 py-2 rounded-md sm:rounded-l-md sm:rounded-r-none border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <button
+                type="submit"
+                className="bg-primary text-primary-foreground px-4 py-2 rounded-md sm:rounded-r-md sm:rounded-l-none hover:bg-primary/90 transition-colors w-full sm:w-auto"
+              >
+                Assinar
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-border pt-8 text-center text-muted-foreground text-sm">
+          <p>
+            © {new Date().getFullYear()} Clarice Literary Hub. Todos os direitos reservados.
+          </p>
+          <p className="mt-1">Projeto acadêmico em construção com ❤️</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

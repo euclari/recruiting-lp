@@ -1,4 +1,4 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/components/contexts/LanguageContext";
 import { BookOpen } from "lucide-react";
 
 
@@ -6,7 +6,7 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-32 bg-gradient-purple relative overflow-hidden">
+    <section id="about" className="py-20 md:py-28 lg:py-32 bg-gradient-purple relative overflow-hidden">
       {/* Background Image with Overlay */}
       
       <div className="absolute inset-0 bg-gradient-purple"></div>

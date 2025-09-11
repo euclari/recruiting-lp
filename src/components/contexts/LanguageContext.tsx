@@ -11,13 +11,16 @@ interface LanguageContextType {
 const translations = {
   pt: {
     // Header
+    'nav.home': 'Início',
     'nav.features': 'Funcionalidades',
     'nav.bookClubs': 'Clubes de Leitura',
     'nav.developers': 'Desenvolvedores',
+    'nav.about': 'Sobre',
+    'nav.joinTeam': 'Junte-se à Equipe',
     
     // Hero Section
-    'hero.title': 'Clarice — onde a leitura vira encontro',
-    'hero.subtitle': 'Uma rede social acadêmica em construção, feita para leitores apaixonados.',
+    'hero.title': 'Clarice',
+    'hero.subtitle': 'Onde a leitura vira encontro. Uma rede social acadêmica em construção, feita para leitores apaixonados.',
     'hero.cta.features': 'Ver funcionalidades',
     'hero.cta.join': 'Participe como Dev',
     
@@ -89,13 +92,16 @@ const translations = {
   },
   en: {
     // Header
+    'nav.home': 'Home',
     'nav.features': 'Features',
     'nav.bookClubs': 'Book Clubs',
     'nav.developers': 'Developers',
+    'nav.about': 'About',
+    'nav.joinTeam': 'Join Team',
     
     // Hero Section
-    'hero.title': 'Clarice — where reading becomes connection',
-    'hero.subtitle': 'An academic project in progress, made for passionate readers.',
+    'hero.title': 'Clarice',
+    'hero.subtitle': 'Where reading becomes connection. An academic project in progress, made for passionate readers.',
     'hero.cta.features': 'View features',
     'hero.cta.join': 'Join as Dev',
     
