@@ -58,6 +58,10 @@ const HeroSection = () => {
                   src="/undraw_reading-time_gcvc.svg" 
                   alt="Pessoa lendo com elementos flutuantes de livros"
                   className="animated-hero-image"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={700}
+                  height={500}
                 />
               </div>
               <div className="floating-element w-12 h-12 -top-6 -right-6"></div>

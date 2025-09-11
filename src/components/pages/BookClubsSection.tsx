@@ -69,6 +69,10 @@ const BookClubsSection = () => {
                   src="/undraw_group-chat_4xw0.svg" 
                   alt="Chat em grupo e discussões"
                   className="modern-image rotate-in"
+                  loading="lazy"
+                  decoding="async"
+                  width={512}
+                  height={384}
                 />
               </div>
               <div className="floating-element w-14 h-14 -top-6 -left-6"></div>
@@ -86,6 +90,10 @@ const BookClubsSection = () => {
                       src={bookClubsImage} 
                       alt="Dom Casmurro" 
                       className="w-15 h-20 rounded-lg object-cover shadow-sm"
+                      loading="lazy"
+                      decoding="async"
+                      width={133}
+                      height={178}
                     />
                     <div>
                       <h3 className="text-2xl font-serif font-normal mb-1">Clube: Dom Casmurro</h3>
