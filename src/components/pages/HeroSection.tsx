@@ -26,7 +26,7 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground/70 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground md:text-foreground/90 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed bg-white/80 dark:bg-background/80 md:bg-transparent rounded-md md:rounded-none px-3 py-1 md:px-0 md:py-0 inline-block">
               {t('hero.subtitle')}
             </p>
             
