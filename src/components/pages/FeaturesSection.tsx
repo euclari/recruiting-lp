@@ -68,7 +68,6 @@ const FeaturesSection = () => {
 
   return (
     <section id="features" className="py-20 md:py-28 lg:py-32 bg-gradient-section relative overflow-hidden">
-      {/* Background Image with Purple Overlay */}
       
       <div className="absolute inset-0 bg-gradient-to-b from-primary/15 to-primary/25"></div>
       
@@ -85,7 +84,6 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        {/* Feature Images Row */}
         <div className="image-grid image-grid-3 mb-16">
           <div className="text-center slide-in-from-left delay-500">
             <div className="relative inline-block mb-6 max-w-[200px]">

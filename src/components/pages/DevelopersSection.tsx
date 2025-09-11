@@ -9,7 +9,6 @@ const DevelopersSection = () => {
 
   return (
     <section id="developers" className="py-20 md:py-28 lg:py-32 bg-gradient-purple relative overflow-hidden">
-      {/* Background Image with Purple Overlay */}
       
       <div className="absolute inset-0 bg-gradient-purple"></div>
       
@@ -32,7 +31,6 @@ const DevelopersSection = () => {
               {t('developers.description')}
             </p>
           </div>
-          {/* Developers Image */}
           <div className="flex justify-center mb-12">
             <div className="relative max-w-md">
               <div className="modern-image-container">
@@ -42,7 +40,6 @@ const DevelopersSection = () => {
                   className="modern-image bounce-in"
                 />
               </div>
-              {/* Modern floating elements */}
               <div className="floating-element w-16 h-16 -top-8 -right-8"></div>
               <div className="floating-element w-10 h-10 -bottom-6 -left-6"></div>
               <div className="floating-element w-8 h-8 top-1/4 -left-10"></div>

@@ -12,7 +12,6 @@ const BookClubsSection = () => {
     <section id="book-clubs" className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-primary/15 via-primary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif font-normal mb-6 fade-in-up">
               {t('bookClubs.title')}
@@ -29,7 +28,6 @@ const BookClubsSection = () => {
             </p>
           </div>
 
-          {/* Features Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <div className="bg-primary-light/20 backdrop-blur-sm p-6 rounded-xl shadow-soft border border-primary/10 scale-in delay-500">
               <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-4">
@@ -64,7 +62,6 @@ const BookClubsSection = () => {
             </div>
           </div>
 
-          {/* Book Clubs Image */}
           <div className="flex justify-center mb-16">
             <div className="relative max-w-md">
               <div className="modern-image-container">
@@ -74,16 +71,13 @@ const BookClubsSection = () => {
                   className="modern-image rotate-in"
                 />
               </div>
-              {/* Modern floating elements */}
               <div className="floating-element w-14 h-14 -top-6 -left-6"></div>
               <div className="floating-element w-8 h-8 -bottom-8 -right-8"></div>
               <div className="floating-element w-6 h-6 top-1/3 -right-12"></div>
             </div>
           </div>
 
-          {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Demo Card */}
             <div className="slide-in-left delay-900">
               <Card className="shadow-book bg-gradient-card border-border/50">
                 <CardContent className="p-8">
@@ -145,7 +139,6 @@ const BookClubsSection = () => {
               </Card>
             </div>
 
-            {/* Right side - Features Detail */}
             <div className="slide-in-right delay-1000">
               <div className="space-y-8">
                 <div>

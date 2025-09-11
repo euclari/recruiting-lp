@@ -20,7 +20,6 @@ const LandingPage = () => {
         <JoinTeamSection />
       </main>
       
-      {/* Footer */}
       <Footer />
     </div>
   );

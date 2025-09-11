@@ -7,8 +7,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 md:py-28 lg:py-32 bg-gradient-purple relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      
+
       <div className="absolute inset-0 bg-gradient-purple"></div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -25,7 +24,6 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* About Image */}
           <div className="flex justify-center mb-16">
             <div className="relative max-w-md">
               <div className="modern-image-container">
@@ -35,7 +33,6 @@ const AboutSection = () => {
                   className="modern-image bounce-in"
                 />
               </div>
-              {/* Modern floating elements */}
               <div className="floating-element w-16 h-16 -top-8 -left-8"></div>
               <div className="floating-element w-10 h-10 -bottom-6 -right-6"></div>
               <div className="floating-element w-8 h-8 top-1/4 -right-10"></div>
@@ -43,7 +40,6 @@ const AboutSection = () => {
           </div>
           
           <div className="space-y-8">
-            {/* Features List */}
             <div className="grid md:grid-cols-3 gap-6 mb-12 fade-in-up delay-400">
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary-light/30 rounded-xl mx-auto mb-4 flex items-center justify-center backdrop-blur-sm">
@@ -70,7 +66,6 @@ const AboutSection = () => {
               </div>
             </div>
             
-            {/* Project Card */}
             <div className="bg-primary-light/15 backdrop-blur-md p-8 rounded-2xl border border-white/20 text-center scale-in delay-600">
               <div className="w-20 h-20 bg-white/20 rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <BookOpen className="w-10 h-10 text-black" />

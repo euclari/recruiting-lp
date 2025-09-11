@@ -6,7 +6,6 @@ const Footer: React.FC = () => {
     <footer className="bg-card text-card-foreground border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand Info */}
           <div className="col-span-1">
             <h3 className="text-2xl font-bold text-primary mb-2">Clarice</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -14,7 +13,6 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Navigation Links */}
           <div className="col-span-1">
             <h4 className="text-lg font-semibold mb-4">Navegação</h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
@@ -25,7 +23,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Social Media & Newsletter */}
           <div className="col-span-1">
             <h4 className="text-lg font-semibold mb-4">Conecte-se</h4>
             <div className="flex space-x-4 mb-6">
@@ -60,7 +57,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-border pt-8 text-center text-muted-foreground text-sm">
           <p>
             © {new Date().getFullYear()} Clarice Literary Hub. Todos os direitos reservados.

@@ -10,7 +10,6 @@ interface LanguageContextType {
 
 const translations = {
   pt: {
-    // Header
     'nav.home': 'Início',
     'nav.features': 'Funcionalidades',
     'nav.bookClubs': 'Clubes de Leitura',
@@ -18,17 +17,14 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.joinTeam': 'Junte-se à Equipe',
     
-    // Hero Section
     'hero.title': 'Clarice',
     'hero.subtitle': 'Onde a leitura vira encontro. Uma rede social acadêmica em construção, feita para leitores apaixonados.',
     'hero.cta.features': 'Ver funcionalidades',
     'hero.cta.join': 'Participe como Dev',
     
-    // About Section
     'about.title': 'Sobre o Clarice',
     'about.description': 'O Clarice é um projeto acadêmico inspirado no Skoob, mas com visual moderno, funcionalidades sociais ricas e identidade brasileira. Uma plataforma onde leitores se conectam, compartilham descobertas e criam comunidades em torno dos livros que amam.',
     
-    // Features
     'features.title': 'Funcionalidades',
     'features.profile.title': 'Perfil Personalizado',
     'features.profile.desc': 'Customize seu perfil literário',
@@ -49,7 +45,6 @@ const translations = {
     'features.messages.title': 'Mensagens Diretas',
     'features.messages.desc': 'Converse com outros leitores',
     
-    // Book Clubs
     'bookClubs.title': 'Clubes de Leitura',
     'bookClubs.subtitle': 'Transforme a leitura em uma experiência compartilhada.',
     'bookClubs.description': 'Crie ou participe de clubes com limite de membros, onde vocês votam nos próximos livros, acompanham o progresso coletivo e discutem cada capítulo em chats temporários.',
@@ -58,13 +53,11 @@ const translations = {
     'bookClubs.feature3': 'Chats por capítulo',
     'bookClubs.feature4': 'Discussões temáticas',
     
-    // Developers
     'developers.title': 'Convite para Desenvolvedores',
     'developers.description': 'Clarice ainda é um projeto acadêmico. Estamos à procura de pessoas que possam agregar na equipe, como UI/UX Designers, Product Managers e outros talentos. Junte-se a nós!',
     'developers.contact': 'Entre em contato:',
     'developers.cta': 'Contribuir no GitHub',
     
-    // Join Team Section
     'joinTeam.title': 'Junte-se à Nossa Equipe',
     'joinTeam.subtitle': 'Estamos em busca de pessoas talentosas que possam agregar valor ao nosso projeto. Se você tem paixão por literatura e tecnologia, venha fazer parte dessa jornada!',
     'joinTeam.lookingFor': 'Procuramos por:',
@@ -91,7 +84,6 @@ const translations = {
     'joinTeam.form.error': 'Erro ao enviar mensagem. Tente novamente mais tarde.',
   },
   en: {
-    // Header
     'nav.home': 'Home',
     'nav.features': 'Features',
     'nav.bookClubs': 'Book Clubs',
@@ -99,17 +91,14 @@ const translations = {
     'nav.about': 'About',
     'nav.joinTeam': 'Join Team',
     
-    // Hero Section
     'hero.title': 'Clarice',
     'hero.subtitle': 'Where reading becomes connection. An academic project in progress, made for passionate readers.',
     'hero.cta.features': 'View features',
     'hero.cta.join': 'Join as Dev',
     
-    // About Section
     'about.title': 'About Clarice',
     'about.description': 'Clarice is an academic project inspired by Skoob, but with modern design, rich social features and Brazilian identity. A platform where readers connect, share discoveries and create communities around the books they love.',
     
-    // Features
     'features.title': 'Features',
     'features.profile.title': 'Custom Profile',
     'features.profile.desc': 'Customize your literary profile',
@@ -130,7 +119,6 @@ const translations = {
     'features.messages.title': 'Direct Messages',
     'features.messages.desc': 'Chat with other readers',
     
-    // Book Clubs
     'bookClubs.title': 'Book Clubs',
     'bookClubs.subtitle': 'Turn reading into a shared experience.',
     'bookClubs.description': 'Create or join clubs with member limits, where you vote on next books, track collective progress and discuss each chapter in temporary chats.',
@@ -139,13 +127,11 @@ const translations = {
     'bookClubs.feature3': 'Chapter-based chats',
     'bookClubs.feature4': 'Thematic discussions',
     
-    // Developers
     'developers.title': 'Invitation for Developers',
     'developers.description': 'Clarice is still an academic project. We are looking for people who can add to the team, such as UI/UX Designers, Product Managers, and other talents. Join us!',
     'developers.contact': 'Get in touch:',
     'developers.cta': 'Contribute on GitHub',
     
-    // Join Team Section
     'joinTeam.title': 'Join Our Team',
     'joinTeam.subtitle': 'We are looking for talented people who can add value to our project. If you have a passion for literature and technology, come be part of this journey!',
     'joinTeam.lookingFor': 'We are looking for:',

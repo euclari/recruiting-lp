@@ -57,13 +57,11 @@ const JoinTeamSection = () => {
 
   return (
     <section id="join-team" className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
-      {/* Decorative purple elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
       <div className="absolute top-40 right-20 w-24 h-24 bg-primary/15 rounded-full blur-lg"></div>
       <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-primary/8 rounded-full blur-2xl"></div>
       <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-primary/12 rounded-full blur-lg"></div>
       
-      {/* Additional purple geometric shapes */}
       <div className="absolute top-1/2 left-0 w-16 h-16 bg-primary/8 rotate-45 blur-sm"></div>
       <div className="absolute top-1/3 right-0 w-20 h-20 bg-primary/6 rotate-12 blur-md"></div>
       <div className="absolute bottom-1/3 left-1/2 w-12 h-12 bg-primary/10 rotate-45 blur-sm"></div>
@@ -88,7 +86,6 @@ const JoinTeamSection = () => {
             </p>
           </div>
 
-          {/* Join Team Image */}
           <div className="flex justify-center mb-16">
             <div className="relative max-w-md">
               <div className="modern-image-container">
@@ -98,7 +95,6 @@ const JoinTeamSection = () => {
                   className="modern-image slide-in-from-left"
                 />
               </div>
-              {/* Modern floating elements */}
               <div className="floating-element w-12 h-12 -top-6 -left-6"></div>
               <div className="floating-element w-8 h-8 -bottom-8 -right-8"></div>
               <div className="floating-element w-6 h-6 top-1/2 -right-10"></div>
@@ -106,7 +102,6 @@ const JoinTeamSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left side - Roles */}
             <div className="space-y-8">
               <div>
                 <h3 className="text-3xl font-serif font-normal mb-6">{t('joinTeam.lookingFor')}</h3>
@@ -162,7 +157,6 @@ const JoinTeamSection = () => {
               </div>
             </div>
 
-            {/* Right side - Contact Form */}
             <div className="slide-in-right delay-600">
               <Card className="shadow-book bg-gradient-to-br from-primary/5 via-primary/8 to-primary/10 border-primary/20 backdrop-blur-sm">
                 <CardContent className="p-8">
