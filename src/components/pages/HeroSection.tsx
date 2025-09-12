@@ -20,10 +20,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-normal mb-4 fade-in-up leading-tight">
-              <span className="gradient-text-hero">
-                {t('hero.title')}
-              </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-4 fade-in-up leading-tight text-secondary-foreground">
+              {t('hero.title')}
             </h1>
             
             <p className="text-xl md:text-2xl text-foreground md:text-foreground/90 mb-12 max-w-3xl mx-auto lg:mx-0 fade-in-up delay-300 leading-relaxed bg-white/80 dark:bg-background/80 md:bg-transparent rounded-md md:rounded-none px-3 py-1 md:px-0 md:py-0 inline-block">
