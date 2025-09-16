@@ -53,10 +53,10 @@ const translations = {
     'bookClubs.feature3': 'Chats por capítulo',
     'bookClubs.feature4': 'Discussões temáticas',
     
-    'developers.title': 'Convite para Desenvolvedores',
-    'developers.description': 'Clarice ainda é um projeto acadêmico. Estamos à procura de pessoas que possam agregar na equipe, como UI/UX Designers, Product Managers e outros talentos. Junte-se a nós!',
-    'developers.contact': 'Entre em contato:',
-    'developers.cta': 'Contribuir no GitHub',
+    'developers.title': 'Junte-se à construção',
+    'developers.description': 'Clarice ainda é um projeto acadêmico. Quer participar da construção? Junte-se a nós!',
+    'developers.contact': 'Ou entre em contato por aqui:',
+    'developers.linkedin': 'Clarice no LinkedIn',
     
     'joinTeam.title': 'Junte-se à Nossa Equipe',
     'joinTeam.subtitle': 'Estamos em busca de pessoas talentosas que possam agregar valor ao nosso projeto. Se você tem paixão por literatura e tecnologia, venha fazer parte dessa jornada!',
@@ -82,6 +82,8 @@ const translations = {
     'joinTeam.form.sending': 'Enviando...',
     'joinTeam.form.success': 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
     'joinTeam.form.error': 'Erro ao enviar mensagem. Tente novamente mais tarde.',
+
+    'footer.tagline': 'Clarice é um projeto acadêmico feito por e para leitores apaixonados.',
   },
   en: {
     'nav.home': 'Home',
@@ -127,10 +129,10 @@ const translations = {
     'bookClubs.feature3': 'Chapter-based chats',
     'bookClubs.feature4': 'Thematic discussions',
     
-    'developers.title': 'Invitation for Developers',
-    'developers.description': 'Clarice is still an academic project. We are looking for people who can add to the team, such as UI/UX Designers, Product Managers, and other talents. Join us!',
-    'developers.contact': 'Get in touch:',
-    'developers.cta': 'Contribute on GitHub',
+    'developers.title': 'Join the building',
+    'developers.description': 'Clarice is still an academic project. Want to join the building? Be part of it!',
+    'developers.contact': 'Or get in touch here:',
+    'developers.linkedin': 'Clarice on LinkedIn',
     
     'joinTeam.title': 'Join Our Team',
     'joinTeam.subtitle': 'We are looking for talented people who can add value to our project. If you have a passion for literature and technology, come be part of this journey!',
@@ -156,6 +158,8 @@ const translations = {
     'joinTeam.form.sending': 'Sending...',
     'joinTeam.form.success': 'Message sent successfully! We will get in touch soon.',
     'joinTeam.form.error': 'Error sending message. Please try again later.',
+
+    'footer.tagline': 'Clarice is an academic project made by and for passionate readers.',
   },
 };
 

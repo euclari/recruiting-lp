@@ -63,12 +63,12 @@ const BookClubsSection = () => {
           </div>
 
           <div className="flex justify-center mb-16">
-            <div className="relative max-w-md">
-              <div className="modern-image-container">
+            <div className="relative max-w-md w-full">
+              <div className="modern-image-container overflow-hidden">
                 <img 
                   src="/undraw_group-chat_4xw0.svg" 
                   alt="Chat em grupo e discussões"
-                  className="modern-image rotate-in"
+                  className="modern-image rotate-in w-full h-auto"
                   loading="lazy"
                   decoding="async"
                   width={512}

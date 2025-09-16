@@ -11,7 +11,8 @@ import {
   Send,
   Heart,
   Code2,
-  Target
+  Target,
+  Linkedin
 } from "lucide-react";
 import { useLanguage } from "@/components/contexts/LanguageContext";
 import { sendContactEmail, ContactFormData } from "@/components/services/emailService";
@@ -56,7 +57,7 @@ const JoinTeamSection = () => {
   };
 
   return (
-    <section id="join-team" className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
+    <section id="developers" className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
       <div className="absolute top-40 right-20 w-24 h-24 bg-primary/15 rounded-full blur-lg"></div>
       <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-primary/8 rounded-full blur-2xl"></div>
@@ -76,29 +77,14 @@ const JoinTeamSection = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-normal mb-6 fade-in-up delay-200">
-              {t('joinTeam.title')}
+              {t('developers.title')}
             </h2>
             
             <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 scale-in delay-200"></div>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto fade-in-up delay-400">
-              {t('joinTeam.subtitle')}
+              {t('developers.description')}
             </p>
-          </div>
-
-          <div className="flex justify-center mb-16">
-            <div className="relative max-w-md">
-              <div className="modern-image-container">
-                <img 
-                  src="/undraw_team-work_i1f3.svg" 
-                  alt="Trabalho em equipe e colaboração"
-                  className="modern-image slide-in-from-left"
-                />
-              </div>
-              <div className="floating-element w-12 h-12 -top-6 -left-6"></div>
-              <div className="floating-element w-8 h-8 -bottom-8 -right-8"></div>
-              <div className="floating-element w-6 h-6 top-1/2 -right-10"></div>
-            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -247,6 +233,35 @@ const JoinTeamSection = () => {
                         )}
                       </Button>
                     </form>
+
+                    <div className="text-center mt-8">
+                      <p className="text-muted-foreground mb-4">{t('developers.contact')}</p>
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <Button 
+                          variant="outline" 
+                          size="lg"
+                          className="bg-primary text-white border-primary shadow-lg font-medium transition-colors hover:bg-primary/90 w-full sm:w-auto"
+                          asChild
+                        >
+                          <a href="mailto:jobs@euclari.com.br">
+                            <Mail className="h-4 w-4 mr-2" />
+                            <span>jobs@euclari.com.br</span>
+                          </a>
+                        </Button>
+                        
+                        <Button 
+                          variant="outline"
+                          size="lg"
+                          className="bg-white text-primary border-white shadow-lg font-medium w-full sm:w-auto"
+                          asChild
+                        >
+                          <a href="https://www.linkedin.com/company/euclari" target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="h-4 w-4 mr-2" />
+                            {t('developers.linkedin')}
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

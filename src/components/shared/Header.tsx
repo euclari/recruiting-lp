@@ -19,13 +19,13 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <a 
               href="#" 
-              className="text-2xl font-serif font-bold gradient-text cursor-pointer"
+              className="cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('home');
               }}
             >
-              Clarice
+              <img src="/logo.svg" alt="Clarice Logo" className="h-8 w-auto" />
             </a>
           </div>
           
@@ -79,16 +79,6 @@ const Header = () => {
               }}
             >
               {t('nav.about')}
-            </a>
-            <a 
-              href="#join-team" 
-              className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('join-team');
-              }}
-            >
-              {t('nav.joinTeam')}
             </a>
           </nav>
 

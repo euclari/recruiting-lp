@@ -1,13 +1,17 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
+import { useLanguage } from "@/components/contexts/LanguageContext";
+
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-card text-card-foreground border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="col-span-1">
-            <h3 className="text-2xl font-bold text-primary mb-2">Clarice</h3>
+            <img src="/logo.svg" alt="Clarice Logo" className="h-10 w-auto mb-4" />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Conectando leitores e escritores em uma comunidade vibrante e inspiradora.
             </p>
@@ -58,10 +62,13 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-border pt-8 text-center text-muted-foreground text-sm">
-          <p>
-            © {new Date().getFullYear()} Clarice Literary Hub. Todos os direitos reservados.
+          <p className="font-semibold text-foreground mb-2">Clarice</p>
+          <p className="mb-4">
+            {t('footer.tagline')}
           </p>
-          <p className="mt-1">Projeto acadêmico em construção com ❤️</p>
+          <p>
+            © {new Date().getFullYear()} Clarice Project. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

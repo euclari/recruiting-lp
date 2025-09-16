@@ -86,12 +86,12 @@ const FeaturesSection = () => {
 
         <div className="image-grid image-grid-3 mb-16">
           <div className="text-center slide-in-from-left delay-500">
-            <div className="relative inline-block mb-6 max-w-[200px]">
-              <div className="modern-image-container">
+            <div className="relative inline-block mb-6 max-w-[200px] w-full">
+              <div className="modern-image-container overflow-hidden">
                 <img 
                   src="/undraw_social-media_vxq0.svg" 
                   alt="Rede social e conexões"
-                  className="modern-image float-image"
+                  className="modern-image float-image w-full h-auto"
                 />
               </div>
               <div className="floating-element w-8 h-8 -top-4 -right-4"></div>
@@ -101,12 +101,12 @@ const FeaturesSection = () => {
           </div>
           
           <div className="text-center bounce-in delay-700">
-            <div className="relative inline-block mb-6 max-w-[200px]">
-              <div className="modern-image-container">
+            <div className="relative inline-block mb-6 max-w-[200px] w-full">
+              <div className="modern-image-container overflow-hidden">
                 <img 
                   src="/undraw_friends-online_gvwz.svg" 
                   alt="Amigos online"
-                  className="modern-image float-image"
+                  className="modern-image float-image w-full h-auto"
                 />
               </div>
               <div className="floating-element w-10 h-10 -bottom-4 -left-4"></div>
@@ -116,12 +116,12 @@ const FeaturesSection = () => {
           </div>
           
           <div className="text-center slide-in-from-right delay-900">
-            <div className="relative inline-block mb-6 max-w-[200px]">
-              <div className="modern-image-container">
+            <div className="relative inline-block mb-6 max-w-[200px] w-full">
+              <div className="modern-image-container overflow-hidden">
                 <img 
                   src="/undraw_solution-mindset_pit7.svg" 
                   alt="Solução e mindset"
-                  className="modern-image float-image"
+                  className="modern-image float-image w-full h-auto"
                 />
               </div>
               <div className="floating-element w-6 h-6 top-1/2 -right-6"></div>
