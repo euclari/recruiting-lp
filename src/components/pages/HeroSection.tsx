@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/contexts/LanguageContext";
+import { useInView } from "@/components/hooks/use-in-view";
 
 const HeroSection = () => {
   const { t } = useLanguage();
+
+  const [logoRef, logoInView] = useInView({ threshold: 0.1 });
+  const [titleRef, titleInView] = useInView({ threshold: 0.1 });
+  const [descriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
+  const [buttonsRef, buttonsInView] = useInView({ threshold: 0.1 });
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
@@ -20,14 +26,31 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <img src="/logo.svg" alt="Clarice Logo" className="h-48 w-auto mx-auto mb-8 fade-in-up" />
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-4 fade-in-up leading-tight text-foreground">
+          <img 
+            ref={logoRef}
+            src="/logo.svg" 
+            alt="Clarice Logo" 
+            className={`h-48 w-auto mx-auto mb-8 ${logoInView ? 'fade-in-up' : 'opacity-0'}`}
+          />
+          <h1 
+            ref={titleRef}
+            className={`text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-4 leading-tight text-foreground ${titleInView ? 'fade-in-up' : 'opacity-0'}`}
+            style={{ animationDelay: '0.1s' }}
+          >
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <p 
+            ref={descriptionRef}
+            className={`text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed ${descriptionInView ? 'fade-in-up' : 'opacity-0'}`}
+            style={{ animationDelay: '0.2s' }}
+          >
             {t('hero.subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div 
+            ref={buttonsRef}
+            className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${buttonsInView ? 'fade-in-up' : 'opacity-0'}`}
+            style={{ animationDelay: '0.3s' }}
+          >
             <Button
               variant="hero"
               size="lg"

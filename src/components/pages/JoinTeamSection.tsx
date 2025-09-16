@@ -17,6 +17,7 @@ import {
 import { useLanguage } from "@/components/contexts/LanguageContext";
 import { sendContactEmail, ContactFormData } from "@/components/services/emailService";
 import { useState } from "react";
+import { useInView } from "@/components/hooks/use-in-view";
 
 const JoinTeamSection = () => {
   const { t, language } = useLanguage();
@@ -56,6 +57,12 @@ const JoinTeamSection = () => {
     }
   };
 
+  const [iconTitleRef, iconTitleInView] = useInView({ threshold: 0.1 });
+  const [separatorRef, separatorInView] = useInView({ threshold: 0.1 });
+  const [descriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
+  const [rolesRef, rolesInView] = useInView({ threshold: 0.1 });
+  const [formRef, formInView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="developers" className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
@@ -70,25 +77,43 @@ const JoinTeamSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-8 fade-in-up">
+            <div 
+              ref={iconTitleRef}
+              className={`flex items-center justify-center mb-8 ${iconTitleInView ? 'fade-in-up' : 'opacity-0'}`}
+            >
               <div className="w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/20 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-glow border border-primary/20">
                 <Users className="h-10 w-10 text-primary" />
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-normal mb-6 fade-in-up delay-200">
+            <h2 
+              className={`text-4xl md:text-5xl font-normal mb-6 ${iconTitleInView ? 'fade-in-up' : 'opacity-0'}`}
+              style={{ animationDelay: '0.2s' }}
+            >
               {t('developers.title')}
             </h2>
             
-            <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 scale-in delay-200"></div>
+            <div 
+              ref={separatorRef}
+              className={`w-24 h-1 bg-gradient-primary mx-auto mb-8 ${separatorInView ? 'scale-in' : 'opacity-0'}`}
+              style={{ animationDelay: '0.2s' }}
+            ></div>
             
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto fade-in-up delay-400">
+            <p 
+              ref={descriptionRef}
+              className={`text-xl text-muted-foreground mb-8 max-w-3xl mx-auto ${descriptionInView ? 'fade-in-up' : 'opacity-0'}`}
+              style={{ animationDelay: '0.4s' }}
+            >
               {t('developers.description')}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-8">
+            <div 
+              ref={rolesRef}
+              className={`space-y-8 ${rolesInView ? 'slide-in-left' : 'opacity-0'}`}
+              style={{ animationDelay: '0.5s' }}
+            >
               <div>
                 <h3 className="text-3xl font-serif font-normal mb-6">{t('joinTeam.lookingFor')}</h3>
                 <div className="space-y-6">
@@ -143,7 +168,11 @@ const JoinTeamSection = () => {
               </div>
             </div>
 
-            <div className="slide-in-right delay-600">
+            <div 
+              ref={formRef}
+              className={`${formInView ? 'slide-in-right' : 'opacity-0'}`}
+              style={{ animationDelay: '0.6s' }}
+            >
               <Card className="shadow-book bg-gradient-to-br from-primary/5 via-primary/8 to-primary/10 border-primary/20 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="space-y-6">

@@ -3,27 +3,49 @@ import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Users, Vote, BarChart3, MessageCircle, ArrowRight, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/components/contexts/LanguageContext";
+import { useInView } from "@/components/hooks/use-in-view";
 import bookClubsImage from "@/assets/book-clubs.jpg";
 
 const BookClubsSection = () => {
   const { t } = useLanguage();
+
+  const [titleRef, titleInView] = useInView({ threshold: 0.1 });
+  const [separatorRef, separatorInView] = useInView({ threshold: 0.1 });
+  const [descriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
+  const [howItWorksRef, howItWorksInView] = useInView({ threshold: 0.1 });
+  const [mockupRef, mockupInView] = useInView({ threshold: 0.1 });
 
   return (
     <section id="book-clubs" className="py-20 md:py-28 lg:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif font-normal mb-6 fade-in-up text-foreground">
+            <h2 
+              ref={titleRef}
+              className={`text-4xl md:text-5xl font-serif font-normal mb-6 text-foreground ${titleInView ? 'fade-in-up' : 'opacity-0'}`}
+            >
               {t('bookClubs.title')}
             </h2>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 scale-in delay-200"></div>
-            <p className="text-xl text-muted-foreground fade-in-up delay-300">
+            <div 
+              ref={separatorRef}
+              className={`w-24 h-1 bg-gradient-primary mx-auto mb-8 ${separatorInView ? 'scale-in' : 'opacity-0'}`}
+              style={{ animationDelay: '0.2s' }}
+            ></div>
+            <p 
+              ref={descriptionRef}
+              className={`text-xl text-muted-foreground ${descriptionInView ? 'fade-in-up' : 'opacity-0'}`}
+              style={{ animationDelay: '0.3s' }}
+            >
               {t('bookClubs.description')}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+            <div 
+              ref={howItWorksRef}
+              className={`space-y-8 ${howItWorksInView ? 'slide-in-left' : 'opacity-0'}`}
+              style={{ animationDelay: '0.4s' }}
+            >
               <h3 className="text-3xl font-serif font-normal mb-4 text-foreground">Como funciona?</h3>
               
               <Card className="bg-card border-none shadow-none">
@@ -57,7 +79,11 @@ const BookClubsSection = () => {
               </Card>
             </div>
 
-            <div className="slide-in-left delay-900">
+            <div 
+              ref={mockupRef}
+              className={`${mockupInView ? 'slide-in-right' : 'opacity-0'}`}
+              style={{ animationDelay: '0.5s' }}
+            >
               <Card className="shadow-xl border border-border/20 rounded-2xl bg-card">
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-4 mb-6">
