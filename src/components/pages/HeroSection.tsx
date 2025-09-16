@@ -20,6 +20,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
+          <img src="/logo.svg" alt="Clarice Logo" className="h-48 w-auto mx-auto mb-8 fade-in-up" />
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-4 fade-in-up leading-tight text-foreground">
             {t('hero.title')}
           </h1>
