@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
-            <img src="/logo.svg" alt="Clarice Logo" className="h-24 w-auto mb-4" />
+            <img src="/logo.svg" alt="Clarice Logo" className="h-20 w-auto mb-4" />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Conectando leitores e escritores em uma comunidade vibrante e inspiradora.
             </p>

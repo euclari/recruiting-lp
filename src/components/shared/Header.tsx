@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-border/50">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <a 
@@ -25,7 +25,7 @@ const Header = () => {
                 scrollToSection('home');
               }}
             >
-              <img src="/logo.svg" alt="Clarice Logo" className="h-8 w-auto" />
+              <img src="/logo.svg" alt="Clarice Logo" className="h-6 w-auto" />
             </a>
           </div>
           
