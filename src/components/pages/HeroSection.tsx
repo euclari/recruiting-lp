@@ -7,14 +7,14 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Abstract background */}
-      <div className="absolute inset-0 z-0 opacity-80" style={{backgroundImage: `
+      <div className="absolute inset-0 z-0 opacity-80" style={{
+        backgroundImage: `
         radial-gradient(circle at 15% 25%, hsl(var(--primary) / 0.15), transparent 35%),
         radial-gradient(circle at 85% 75%, hsl(var(--primary) / 0.15), transparent 35%)
       `}} />
       <div className="absolute inset-0 pointer-events-none z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl animate-float opacity-50"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full filter blur-3xl animate-float" style={{animationDelay: '4s', opacity: 0.5}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '4s', opacity: 0.5 }}></div>
       </div>
 
       {/* Content */}
@@ -24,10 +24,10 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-4 fade-in-up leading-tight text-foreground">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto fade-in-up" style={{animationDelay: '0.3s'}}>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto fade-in-up" style={{ animationDelay: '0.3s' }}>
             {t('hero.subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up" style={{ animationDelay: '0.3s' }}>
             <Button
               variant="hero"
               size="lg"
