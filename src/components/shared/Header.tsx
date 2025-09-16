@@ -3,7 +3,6 @@ import { scrollToSection } from "@/components/lib/utils";
 import { Globe } from "lucide-react";
 import { useLanguage } from "@/components/contexts/LanguageContext";
 import MobileNav from "./MobileNav";
-            
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -17,21 +16,21 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('home');
               }}
             >
-              <img src="/logo.svg" alt="Clarice Logo" className="h-6 w-auto" />
+              <img src="/logo.svg" alt="Clarice Logo" className="h-12 w-auto" />
             </a>
           </div>
-          
+
           <nav className="hidden md:flex items-center space-x-8">
-                        <a 
-              href="#" 
+            <a
+              href="#"
               className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
@@ -40,8 +39,8 @@ const Header = () => {
             >
               {t('nav.home')}
             </a>
-            <a 
-              href="#features" 
+            <a
+              href="#features"
               className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
@@ -50,8 +49,8 @@ const Header = () => {
             >
               {t('nav.features')}
             </a>
-            <a 
-              href="#book-clubs" 
+            <a
+              href="#book-clubs"
               className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
@@ -60,8 +59,8 @@ const Header = () => {
             >
               {t('nav.bookClubs')}
             </a>
-            <a 
-              href="#developers" 
+            <a
+              href="#developers"
               className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
@@ -70,8 +69,8 @@ const Header = () => {
             >
               {t('nav.developers')}
             </a>
-            <a 
-              href="#about" 
+            <a
+              href="#about"
               className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
@@ -83,11 +82,11 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center md:hidden">
-            <MobileNav 
-              t={t} 
-              language={language} 
-              toggleLanguage={toggleLanguage} 
-              scrolled={true} 
+            <MobileNav
+              t={t}
+              language={language}
+              toggleLanguage={toggleLanguage}
+              scrolled={true}
             />
           </div>
 

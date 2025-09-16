@@ -9,7 +9,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
-      <main className="pt-20 md:pt-24">
+      <main className="pt-14 md:pt-16">
         <HeroSection />
         <AboutSection />
         <FeaturesSection />
