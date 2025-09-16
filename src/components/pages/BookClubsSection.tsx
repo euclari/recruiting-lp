@@ -9,31 +9,28 @@ import bookClubsImage from "@/assets/book-clubs.jpg";
 const BookClubsSection = () => {
   const { t } = useLanguage();
 
-  const [titleRef, titleInView] = useInView({ threshold: 0.1 });
-  const [separatorRef, separatorInView] = useInView({ threshold: 0.1 });
-  const [descriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
-  const [howItWorksRef, howItWorksInView] = useInView({ threshold: 0.1 });
-  const [mockupRef, mockupInView] = useInView({ threshold: 0.1 });
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.1 });
 
   return (
-    <section id="book-clubs" className="py-20 md:py-28 lg:py-32 bg-background">
+    <section 
+      id="book-clubs" 
+      ref={sectionRef}
+      className="py-20 md:py-28 lg:py-32 bg-background"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <h2 
-              ref={titleRef}
-              className={`text-4xl md:text-5xl font-serif font-normal mb-6 text-foreground ${titleInView ? 'fade-in-up' : 'opacity-0'}`}
+              className={`text-4xl md:text-5xl font-serif font-normal mb-6 text-foreground ${sectionInView ? 'fade-in-up' : 'opacity-0'}`}
             >
               {t('bookClubs.title')}
             </h2>
             <div 
-              ref={separatorRef}
-              className={`w-24 h-1 bg-gradient-primary mx-auto mb-8 ${separatorInView ? 'scale-in' : 'opacity-0'}`}
+              className={`w-24 h-1 bg-gradient-primary mx-auto mb-8 ${sectionInView ? 'scale-in' : 'opacity-0'}`}
               style={{ animationDelay: '0.2s' }}
             ></div>
             <p 
-              ref={descriptionRef}
-              className={`text-xl text-muted-foreground ${descriptionInView ? 'fade-in-up' : 'opacity-0'}`}
+              className={`text-xl text-muted-foreground ${sectionInView ? 'fade-in-up' : 'opacity-0'}`}
               style={{ animationDelay: '0.3s' }}
             >
               {t('bookClubs.description')}
@@ -42,8 +39,7 @@ const BookClubsSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div 
-              ref={howItWorksRef}
-              className={`space-y-8 ${howItWorksInView ? 'slide-in-left' : 'opacity-0'}`}
+              className={`space-y-8 ${sectionInView ? 'slide-in-left' : 'opacity-0'}`}
               style={{ animationDelay: '0.4s' }}
             >
               <h3 className="text-3xl font-serif font-normal mb-4 text-foreground">Como funciona?</h3>
@@ -80,8 +76,7 @@ const BookClubsSection = () => {
             </div>
 
             <div 
-              ref={mockupRef}
-              className={`${mockupInView ? 'slide-in-right' : 'opacity-0'}`}
+              className={`${sectionInView ? 'slide-in-right' : 'opacity-0'}`}
               style={{ animationDelay: '0.5s' }}
             >
               <Card className="shadow-xl border border-border/20 rounded-2xl bg-card">

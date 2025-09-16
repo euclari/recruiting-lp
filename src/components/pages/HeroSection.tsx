@@ -23,30 +23,33 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '4s', opacity: 0.5 }}></div>
       </div>
 
-      {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <img 
+          <img
+            //@ts-expect-error
             ref={logoRef}
-            src="/logo.svg" 
-            alt="Clarice Logo" 
+            src="/logo.svg"
+            alt="Clarice Logo"
             className={`h-48 w-auto mx-auto mb-8 ${logoInView ? 'fade-in-up' : 'opacity-0'}`}
           />
-          <h1 
+          <h1
+            //@ts-expect-error
             ref={titleRef}
             className={`text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-4 leading-tight text-foreground ${titleInView ? 'fade-in-up' : 'opacity-0'}`}
             style={{ animationDelay: '0.1s' }}
           >
             {t('hero.title')}
           </h1>
-          <p 
+          <p
+            //@ts-expect-error
             ref={descriptionRef}
             className={`text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed ${descriptionInView ? 'fade-in-up' : 'opacity-0'}`}
             style={{ animationDelay: '0.2s' }}
           >
             {t('hero.subtitle')}
           </p>
-          <div 
+          <div
+            //@ts-expect-error
             ref={buttonsRef}
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${buttonsInView ? 'fade-in-up' : 'opacity-0'}`}
             style={{ animationDelay: '0.3s' }}
@@ -71,7 +74,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );

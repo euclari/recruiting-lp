@@ -5,34 +5,31 @@ import { useInView } from "@/components/hooks/use-in-view";
 const AboutSection = () => {
   const { t } = useLanguage();
 
-  const [titleRef, titleInView] = useInView({ threshold: 0.1 });
-  const [separatorRef, separatorInView] = useInView({ threshold: 0.1 });
-  const [descriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
-  const [pillarsRef, pillarsInView] = useInView({ threshold: 0.1 });
-  const [academicCardRef, academicCardInView] = useInView({ threshold: 0.1 });
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.1 });
 
   return (
-    <section id="about" className="py-20 md:py-28 lg:py-32 bg-background relative overflow-hidden">
+    <section 
+      id="about" 
+      ref={sectionRef}
+      className="py-20 md:py-28 lg:py-32 bg-background relative overflow-hidden"
+    >
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 
-              ref={titleRef}
-              className={`text-4xl md:text-5xl font-serif font-normal mb-6 text-foreground ${titleInView ? 'fade-in-up' : 'opacity-0'}`}
+              className={`text-4xl md:text-5xl font-serif font-normal mb-6 text-foreground ${sectionInView ? 'fade-in-up' : 'opacity-0'}`}
             >
               {t('about.title')}
             </h2>
             
             <div 
-              ref={separatorRef}
-              className={`w-24 h-1 bg-gradient-primary mx-auto mb-8 ${separatorInView ? 'scale-in' : 'opacity-0'}`}
+              className={`w-24 h-1 bg-gradient-primary mx-auto mb-8 ${sectionInView ? 'scale-in' : 'opacity-0'}`}
               style={{ animationDelay: '0.2s' }}
             ></div>
             
             <p 
-              ref={descriptionRef}
-              className={`text-xl text-muted-foreground leading-relaxed mb-12 ${descriptionInView ? 'fade-in-up' : 'opacity-0'}`}
+              className={`text-xl text-muted-foreground leading-relaxed mb-12 ${sectionInView ? 'fade-in-up' : 'opacity-0'}`}
               style={{ animationDelay: '0.3s' }}
             >
               {t('about.description')}
@@ -41,8 +38,7 @@ const AboutSection = () => {
 
           
           <div 
-            ref={pillarsRef}
-            className={`space-y-8 ${pillarsInView ? 'fade-in-up' : 'opacity-0'}`}
+            className={`space-y-8 ${sectionInView ? 'fade-in-up' : 'opacity-0'}`}
             style={{ animationDelay: '0.4s' }}
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -64,8 +60,7 @@ const AboutSection = () => {
             </div>
             
             <div 
-              ref={academicCardRef}
-              className={`bg-card/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-border/50 text-center ${academicCardInView ? 'scale-in' : 'opacity-0'}`}
+              className={`bg-card/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-border/50 text-center ${sectionInView ? 'scale-in' : 'opacity-0'}`}
               style={{ animationDelay: '0.6s' }}
             >
               <div className="w-20 h-20 bg-primary/10 rounded-2xl mx-auto mb-6 flex items-center justify-center">
