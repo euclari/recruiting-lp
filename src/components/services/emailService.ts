@@ -37,7 +37,9 @@ export const sendContactEmail = async (data: ContactFormData, language: 'pt' | '
       body: JSON.stringify(data),
     });
 
-    if (!response.ok) {
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
       return {
         success: false,
         message: messages.error,

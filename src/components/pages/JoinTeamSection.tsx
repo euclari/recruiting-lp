@@ -1,9 +1,10 @@
-"use client";
+'use client';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { 
   Palette, 
   Users, 
@@ -24,29 +25,36 @@ const JoinTeamSection = () => {
   const { t, language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
+    email: '',
+    role: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleRoleChange = (value: string) => {
+    setFormData(prev => ({ ...prev, role: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage(null);
-    
-    const formData = new FormData(e.currentTarget);
-    const data: ContactFormData = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      role: formData.get('role') as string,
-      message: formData.get('message') as string
-    };
-    
+
     try {
-      const result = await sendContactEmail(data, language);
+      const result = await sendContactEmail(formData, language);
       setSubmitMessage({
         type: result.success ? 'success' : 'error',
         text: result.message
       });
-      
+
       if (result.success) {
-        e.currentTarget.reset();
+        setFormData({ name: '', email: '', role: '', message: '' });
       }
     } catch (error) {
       setSubmitMessage({
@@ -63,6 +71,13 @@ const JoinTeamSection = () => {
   const [descriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
   const [rolesRef, rolesInView] = useInView({ threshold: 0.1 });
   const [formRef, formInView] = useInView({ threshold: 0.1 });
+
+  const roles = [
+    { value: "ui-ux-designer", label: t('joinTeam.uiux.title') },
+    { value: "product-manager", label: t('joinTeam.product.title') },
+    { value: "developer", label: t('joinTeam.developer.title') },
+    { value: "other", label: t('joinTeam.other.title') }
+  ];
 
   return (
     <section id="developers" className="py-32 bg-gradient-to-b from-primary/20 via-primary/25 to-primary/30 relative overflow-hidden">
@@ -195,6 +210,8 @@ const JoinTeamSection = () => {
                             required 
                             className="mt-1"
                             placeholder={t('joinTeam.form.namePlaceholder')}
+                            value={formData.name}
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -206,20 +223,24 @@ const JoinTeamSection = () => {
                             required 
                             className="mt-1"
                             placeholder={t('joinTeam.form.emailPlaceholder')}
+                            value={formData.email}
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
                       
                       <div>
                         <Label htmlFor="role">{t('joinTeam.form.role')}</Label>
-                        <Input 
-                          id="role" 
-                          name="role" 
-                          type="text" 
-                          required 
-                          className="mt-1"
-                          placeholder={t('joinTeam.form.rolePlaceholder')}
-                        />
+                        <Select onValueChange={handleRoleChange} value={formData.role} required>
+                          <SelectTrigger className="mt-1">
+                            <SelectValue placeholder={t('joinTeam.form.rolePlaceholder')} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {roles.map(role => (
+                              <SelectItem key={role.value} value={role.value}>{role.label}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </div>
                       
                       <div>
@@ -230,6 +251,8 @@ const JoinTeamSection = () => {
                           required 
                           className="mt-1 min-h-[120px]"
                           placeholder={t('joinTeam.form.messagePlaceholder')}
+                          value={formData.message}
+                          onChange={handleChange}
                         />
                       </div>
                       
