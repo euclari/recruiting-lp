@@ -1,3 +1,4 @@
+'use client';
 import { useLanguage } from "@/components/contexts/LanguageContext";
 import { BookOpen, Monitor, Users, Globe } from "lucide-react";
 import { useInView } from "@/components/hooks/use-in-view";

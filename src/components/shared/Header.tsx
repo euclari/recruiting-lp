@@ -1,3 +1,4 @@
+'use client';
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/components/lib/utils";
 import { Globe } from "lucide-react";

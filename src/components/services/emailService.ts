@@ -27,31 +27,32 @@ const getTranslatedMessages = (language: 'pt' | 'en' = 'pt') => {
 
 // Função para enviar email via API
 export const sendContactEmail = async (data: ContactFormData, language: 'pt' | 'en' = 'pt'): Promise<EmailResponse> => {
+  const messages = getTranslatedMessages(language);
   try {
-    // Por enquanto, vamos simular o envio do email
-    // Em produção, você pode configurar um endpoint real
-    console.log('Dados do formulário:', data);
-    
-    // Simular delay de rede
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Aqui você pode integrar com serviços como:
-    // - EmailJS
-    // - Formspree
-    // - Netlify Forms
-    // - Sua própria API backend
-    
-    const messages = getTranslatedMessages(language);
+    const response = await fetch('/api/mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      return {
+        success: false,
+        message: messages.error,
+      };
+    }
+
     return {
       success: true,
-      message: messages.success
+      message: messages.success,
     };
   } catch (error) {
     console.error('Erro ao enviar email:', error);
-    const messages = getTranslatedMessages(language);
     return {
       success: false,
-      message: messages.error
+      message: messages.error,
     };
   }
 };
