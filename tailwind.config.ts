@@ -61,8 +61,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Nunito', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ['var(--font-nunito)'],
+        serif: ['var(--font-playfair-display)'],
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
