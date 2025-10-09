@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+   CI:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [18.x, 20.x]
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Setup node.js
+          uses: actions/setup-node@v4 
+          with:
+           node-version: ${{matrix.node-version}}
+           cache: 'npm'
+        - name: Cache Next.js build
+          uses: actions/cache@v4
+          with:
+            path: .next/cache
+            key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFIles('**/package-lock.json') }}
+
+        - name: install Dependencies 
+          run: npm ci
+
+        - name: Run Lint
+          run: npm run lint
+          env:
+            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}        
+
+        - name: Run Build
+          run: npm run build
+          env:
+            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+
+        - name: Run tests
+          run: npm test
+          env:
+            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+
+
+  # CD:  ----> para quando obter acesso da vercel
+  #     - name: Deploy to Vercel
+  #    uses: amondnet/vercel-action@v25
+  #    with:
+  #        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+  #        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+  #        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+  #        #   github-token: ${{ secrets.GITHUB_TOKEN }}
+  #        vercel-args: '--prod'
