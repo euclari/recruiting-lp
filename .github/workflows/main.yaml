@@ -1,61 +1,23 @@
-name: CI
+name: CI/CD
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
   pull_request:
-    branches: [main]
+    branches: [ "main" ]
 
 jobs:
-  CI:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22.x]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  call-reusable-workflow:
+    uses: euclari/Workflows/.github/workflows/reusable-ci-cd.yaml@main
+    with:
+      has-tests: true
+      test-command: 'npm test'
+      # Habilita o deploy APENAS se o evento for um push para a branch main
+      enable-deploy: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      build-command: 'npm run build'
+      artifact-path: 'dist'         # Pasta de build do projeto
 
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-
-      - name: Cache Next.js build
-        uses: actions/cache@v4
-        with:
-          path: .next/cache
-          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Run Lint
-        run: npm run lint
-        env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-
-      - name: Run Build
-        run: npm run build
-        env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-
-      - name: Run tests
-        run: npm test
-        env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-
-  CD:
-    needs: CI
-    runs-on: ubuntu-latest
-    # Faz com que só faça o deploy quando fizer push na main 
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' 
-    steps:
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+    secrets:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
