@@ -1,0 +1,3 @@
+{
+  "builds": [{ "src": "{{Source for distribution}}", "use": "@vercel/static" }]
+}

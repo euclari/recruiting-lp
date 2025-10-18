@@ -11,10 +11,10 @@ jobs:
     uses: euclari/Workflows/.github/workflows/reusable-ci-cd.yaml@main
     with:
       has-tests: true
-      test-command: 'npm test'
+      test-command: 'bun test'
       # Habilita o deploy APENAS se o evento for um push para a branch main
       enable-deploy: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-      build-command: 'npm run build'
+      build-command: 'bun run build'
       artifact-path: 'dist'         # Pasta de build do projeto
 
     secrets:
