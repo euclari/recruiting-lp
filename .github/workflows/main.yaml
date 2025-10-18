@@ -7,51 +7,55 @@ on:
     branches: [main]
 
 jobs:
-   CI:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [20.x, 22.x]
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
+  CI:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-        - name: Setup node.js
-          uses: actions/setup-node@v4 
-          with:
-           node-version: ${{matrix.node-version}}
-           cache: 'npm'
-        - name: Cache Next.js build
-          uses: actions/cache@v4
-          with:
-            path: .next/cache
-            key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFIles('**/package-lock.json') }}
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-        - name: install Dependencies 
-          run: npm ci
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
 
-        - name: Run Lint
-          run: npm run lint
-          env:
-            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}        
+      - name: Install Dependencies
+        run: npm ci
 
-        - name: Run Build
-          run: npm run build
-          env:
-            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      - name: Run Lint
+        run: npm run lint
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
-        - name: Run tests
-          run: npm test
-          env:
-            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      - name: Run Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
+      - name: Run tests
+        run: npm test
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
-  # CD:  ----> para quando obter acesso da vercel
-  #     - name: Deploy to Vercel
-  #    uses: amondnet/vercel-action@v25
-  #    with:
-  #        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-  #        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-  #        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-  #        #   github-token: ${{ secrets.GITHUB_TOKEN }}
-  #        vercel-args: '--prod'
+  CD:
+    needs: CI
+    runs-on: ubuntu-latest
+    # Faz com que só faça o deploy quando fizer push na main 
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' 
+    steps:
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
