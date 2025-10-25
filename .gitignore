@@ -27,3 +27,6 @@ dist-ssr
 *.sw?
 
 GEMINI.md
+
+# Vercel
+.vercel/

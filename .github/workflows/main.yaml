@@ -1,0 +1,23 @@
+name: CI/CD 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  call-reusable-workflow:
+    uses: euclari/Workflows/.github/workflows/reusable-ci-cd.yaml@main
+    with:
+      has-tests: true
+      test-command: 'bun test'
+      # Habilita o deploy APENAS se o evento for um push para a branch main
+      enable-deploy: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      build-command: 'bun run build'
+      artifact-path: 'dist'         # Pasta de build do projeto
+
+    secrets:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
