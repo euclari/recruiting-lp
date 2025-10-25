@@ -1,0 +1,14 @@
+services:
+  next:
+    build: .
+    container_name: frontend
+    ports:
+    # aqui coloquei 3001 caso o outro container esteja rodando
+    # que é na porta 3000
+      - "3001:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      
