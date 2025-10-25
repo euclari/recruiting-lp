@@ -1,7 +1,7 @@
 services:
   next:
     build: .
-    container_name: frontend
+    container_name: recruiting-lp
     ports:
     # aqui coloquei 3001 caso o outro container esteja rodando
     # que é na porta 3000

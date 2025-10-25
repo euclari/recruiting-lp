@@ -1,7 +1,7 @@
 FROM oven/bun:1-alpine AS dependencies
 
 WORKDIR /app
-COPY package.json bun.lock ./
+COPY package.json bun.lockb ./
 RUN bun install
 COPY . .
 EXPOSE 3000
